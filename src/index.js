@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './01-base/01-class component'
 
-ReactDOM.render(React.createElement("div", {
-    id: "aaa",
-    class: "bbbb"
-}, "11111111"), document.getElementById("root"))
+ReactDOM.render(<App></App>, document.getElementById("root"))
