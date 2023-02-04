@@ -11,3 +11,5 @@ structure(HTML), behavior(JS), pattern(CSS)
 1. review class and class extends in JS
 
 2. How to create class Component in React
+
+组件名字要大写
