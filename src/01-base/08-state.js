@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 
 export default class App extends Component {
     a = 1
-    state = {
-        text: "Collect",
-        myShow: true
+
+    constructor() {
+        super()
+        this.state = {
+            mytext: "Collect",
+            myshow: true
+        }
     }
     render () {
         return (
