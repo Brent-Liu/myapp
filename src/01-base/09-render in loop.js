@@ -12,10 +12,10 @@ export default class App extends Component {
                 <ul>
                     {
                         this.state.list.map(item =>
-                            <li key={item}>{item}</li>)
+                            <li key={item.id}>{item}</li>)
                     }
                 </ul>
             </div>
         )
     }
-} 
+}    
