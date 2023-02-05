@@ -18,3 +18,8 @@ structure(HTML), behavior(JS), pattern(CSS)
 
 可以外部导入 CSS 样式，也可以在内部以 obj 的形式写
 大括号里面的东西是 JS 的天地，但只能放表达式，不能放函数
+
+# P11 Event tackle
+
+改变 this 指向三种方法
+React 并不会真正的绑定事件到每一个具体 <> 的元素上，而是采用事件代理的模式
