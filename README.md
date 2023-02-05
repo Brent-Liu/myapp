@@ -23,3 +23,7 @@ structure(HTML), behavior(JS), pattern(CSS)
 
 改变 this 指向三种方法
 React 并不会真正的绑定事件到每一个具体 <> 的元素上，而是采用事件代理的模式
+
+# P13 ref 的应用
+
+用 React.createRef()拿到节点 input 中的值
