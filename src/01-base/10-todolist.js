@@ -20,6 +20,11 @@ export default class App extends Component {
                     {
                         this.state.list.map(item => <li key={item}>
                             {item}
+
+                            {/*富文本展示*/}
+                            <span dangerouslySetInnerHTML={
+                                { __html: item }
+                            }></span>
                             <button onClick={this.handleClick2.bind(this, item)}>delete</button>
                         </li>)
                     }
