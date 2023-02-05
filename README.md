@@ -35,3 +35,7 @@ React 并不会真正的绑定事件到每一个具体 <> 的元素上，而是�
 # P16 Key 值解析
 
 Key 值原因：为了列表的复用和重排
+
+# P18 todolist case - delete
+
+splice 函数

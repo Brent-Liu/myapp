@@ -17,8 +17,12 @@ export default class App extends Component {
                 }}>add2</button>
                 <ul>
                     {
-                        this.state.list.map(item => <li key={item}>{item}</li>)
+                        this.state.list.map(item => <li key={item}>
+                            {item}
+                            <button onClick={this.handleClick3.bind(this, item)}>delete</button>
+                        </li>)
                     }
+
                 </ul>
             </div >
         )
@@ -32,6 +36,18 @@ export default class App extends Component {
 
         this.setState({
             list: this.state.list
+        })
+    }
+
+    handleClick3 = (index) => {
+        console.log("brent", index)
+
+        let newlist = this.state.list.slice()
+
+        newlist.splice(index, 1)
+
+        this.setState({
+            list: newlist
         })
     }
 }
