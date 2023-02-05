@@ -39,3 +39,7 @@ Key 值原因：为了列表的复用和重排
 # P18 todolist case - delete
 
 splice 函数
+
+# P19 conditional render
+
+添加了三个功能：输入框自动清空，list 为空时候显示为空

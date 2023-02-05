@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './css/01-index.css'
 
 export default class App extends Component {
     a = 100
@@ -13,22 +14,28 @@ export default class App extends Component {
             <div>
                 <input ref={this.myref}></input>
                 <button onClick={() => {
-                    this.handleClick2()
+                    this.handleClick1()
                 }}>add2</button>
                 <ul>
                     {
                         this.state.list.map(item => <li key={item}>
                             {item}
-                            <button onClick={this.handleClick3.bind(this, item)}>delete</button>
+                            <button onClick={this.handleClick2.bind(this, item)}>delete</button>
                         </li>)
                     }
 
                 </ul>
+
+                {this.state.list.length === 0 ? <div>no current event</div> : null}
+
+                {this.state.list.length === 0 && <div>no current event </div>}
+
+                <div className={this.state.list.length === 0 ? '' : 'hidden'}>no current event</div>
             </div >
         )
     }
 
-    handleClick2 = () => {
+    handleClick1 = () => {
         console.log("click2", this.myref.current.value)
 
         let newlist = this.state.list
@@ -37,9 +44,11 @@ export default class App extends Component {
         this.setState({
             list: this.state.list
         })
+
+        this.myref.current.value = ""
     }
 
-    handleClick3 = (index) => {
+    handleClick2 = (index) => {
         console.log("brent", index)
 
         let newlist = this.state.list.slice()

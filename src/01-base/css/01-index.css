@@ -5,3 +5,7 @@
 #myapp {
   background-color: brown;
 }
+
+.hidden {
+  display: none;
+}
