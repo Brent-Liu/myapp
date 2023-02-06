@@ -6,6 +6,10 @@ export default class Cinema extends Component {
     constructor() {
         super()
 
+        this.state = {
+            cinemaList: []
+        }
+
         // axios.get("地址").then(res => { }).catch(err => { console.log(err) })
 
         // axios.get("https://m.maizuo.com/gateway?cityId=110100&ticketFlag=1&k=8720566").then(
@@ -23,15 +27,37 @@ export default class Cinema extends Component {
                 'X-Host': 'mall.film-ticket.cinema.list'
             }
         }).then(res => {
-            console.log(res.data)
+            console.log(res.data.data.cinemas)
+
+            this.setState({
+                cinemaList: res.data.data.cinemas
+            })
         })
 
     }
     render () {
         return (
             <div>
-                Cinema component
-            </div>
+                <input onInput={this.handleInput} />
+                {
+                    this.state.cinemaList.map(item =>
+                        <dl key={item.id}>
+                            <dt>{item.name}</dt>
+                            <dd>{item.address}</dd>
+                        </dl>
+                    )
+                }
+            </div >
         )
+    }
+
+    handleInput = (event) => {
+        console.log("input", event.target.value)
+
+        var newList = this.state.cinemaList.filter(item => item.name.includes(event.target.value))
+
+        this.setState({
+            cinemaList: newList
+        })
     }
 }
