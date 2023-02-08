@@ -20,7 +20,7 @@ export default class App extends Component {
             <div>
                 <div>
                     <h2>首页</h2>
-                    <Navbar title="首页" leftshow={false} />
+                    <Navbar title="首页" leftshow="false" />
                 </div>
                 <div>
                     <h2>列表</h2>
@@ -34,6 +34,11 @@ export default class App extends Component {
         )
     }
 }
+
+// Navbar.propTypes = {
+//     title: kerwinPropTypes.string,
+//     leftshow: kerwinPropTypes.bool
+// }
 
 // Navbar.defaultProps = {
 //     leftshow: true
